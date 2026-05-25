@@ -1,0 +1,24 @@
+{
+  "entities": {
+    "user": {
+      "title": "User",
+      "description": "User profile and usage statistics.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "processedPhotosCount": { "type": "number" },
+        "lastActive": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "user",
+      "description": "Information about the user."
+    }
+  }
+}
